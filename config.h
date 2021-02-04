@@ -5,8 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=14:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
+//static char *font = "FiraCode Nerd Font:style=Retina,Regular:pixelsize=12:antialias=true:autohint=true";
+static char *font = "mono:size=11";
+static char *font2[] = { "FiraCode Nerd Font:style=Medium,Regular:size=11",
+                         "MesloLGS NF:style=Regular:size=11"};
 static int borderpx = 2;
 
 /*
@@ -17,7 +19,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/usr/bin/zsh";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -108,26 +110,31 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.95;
 
 /* Terminal colors (16 first used in escape sequence) */
+/* Default color sequence defined here is GRUVBOX     */
 static const char *colorname[] = {
+	/* 8 normal colors */
 	"#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	"#cc241d",
-	"#98971a",
-	"#d79921",
-	"#458588",
-	"#b16286",
-	"#689d6a",
-	"#a89984",
-	"#928374",
-	"#fb4934",
-	"#b8bb26",
-	"#fabd2f",
-	"#83a598",
-	"#d3869b",
-	"#8ec07c",
-	"#ebdbb2",
+	"#cc241d", /* red     */
+	"#98971a", /* green   */
+	"#d79921", /* yellow  */
+	"#458588", /* blue    */
+	"#b16286", /* magenta */
+	"#689d6a", /* cyan    */
+	"#a89984", /* white   */
+
+	/* 8 bright colors */
+	"#928374", /* black   */
+	"#fb4934", /* red     */
+	"#b8bb26", /* green   */
+	"#fabd2f", /* yellow  */
+	"#83a598", /* blue    */
+	"#d3869b", /* magenta */
+	"#8ec07c", /* cyan    */
+	"#ebdbb2", /* white   */
+
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#add8e6", /* 256 -> cursor */
